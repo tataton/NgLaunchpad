@@ -14,7 +14,7 @@ Steps:
 * set up basic project HTML
 * our first 2-way bind
 * our first ng-click
-* adding some functionality
+* food for thought
 
 download AngularJS (1.5)
 ========================
@@ -114,4 +114,46 @@ First, let's do some simple 2-way binding DOM manipulation. Update your Launchpa
 </div>
 ```
 
-This created an 'ng-model' and bound it to our input field. Now, anything input here by the user is held in the 'movieName' model. Check out those double curly braces in the bottom p element. That is an 'expression'. It allows a 'two-way bind' from that expression to the "movieName" model. Save and refresh your page. You'll notice that as you type in the input field the expression is automatically updated in real time!!! M4G1C!!!!
+This created an 'ng-model' and bound it to our input field. Now, anything input here by the user is held in the 'movieName' model. Check out those double curly braces in the bottom p element. That is an 'expression'. It allows a 'two-way bind' from that expression to the "movieName" model. Save and refresh your page. You'll notice that as you type in the input field the expression is automatically updated in real time!!!
+M4G1C!!!!
+
+our first ng-click
+==================
+Now that we've got an ng-model named "movieName" in the div that is controlled by the controller that is in our app and we've two-way bound it to the DOM, let's add a button that will use Angular's 'ng-click' and do something with the movieName field.
+
+* add a button to the html
+* give it an ng-click tag of 'getMovieName' as a function
+
+```html
+<button ng-click='getMovieName()'>Get Movie Name</button>
+```
+
+'ng-click' is an angular event much like "onClick" in vanilla JS. Here it is telling our button to run the "getMovieName" function. Let's add that function in our JS. Update the controller to read as follows:
+
+```javascript
+myApp.controller( 'LaunchpadControler', [ '$scope', function( $scope ){
+  console.log( 'NG' );
+  $scope.getMovieName = function(){
+    console.log( 'in getMovieName()');
+    console.log( 'movieMame:', $scope.movieName );
+  }; // end getMovieName
+}]);
+```
+
+This will create the 'getMovieName' function within the scope of our controller. This is why $scope is used in the JS. You'll note that we are able to access movieName from the HTML as $scope.movieName in the js file. Also, 'getMovieName()' is used in the HTML, but '$scope.getMovieName()' is used in the js file.
+
+Refresh the page now and you'll see that the same functionality happens as before, but we also have that new button. Click it and you'll see that the script logs out our favorite movie. Not only is our ng-model of movieName two way bound on the DOM through input and expression, but it is also available to our controller in the js file! How cool is that?!?!?
+
+
+
+All of this is happening within our controller in the js and within the div in our html.
+
+![scope in html and js]
+
+food for thought
+================
+This is a simple example of how Angular works on the front end. Next steps:
+* recreate this!
+* add an array that holds all the favorite movies that have been input on button click
+* console log out that array
+* research ng-repeat and see if you can get that info on the DOM
