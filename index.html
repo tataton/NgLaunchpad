@@ -7,8 +7,10 @@
     <script src="scripts/ngLaunchpad.js" charset="utf-8"></script>
   </head>
   <body ng-app='myApp'>
-    <h1>NG Launchpad</h1>
-    What's your favorite movie? <input ng-model="movieName">
-    <p>Your favorite movie is: {{ movieName }} </p>
+    <div ng-controller='LaunchpadControler'>
+      <h1>NG Launchpad</h1>
+      What's your favorite movie? <input type="text" name="name" value="">
+      <p>Your favorite movie is: </p>
+    </div>
   </body>
 </html>
