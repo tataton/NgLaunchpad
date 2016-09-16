@@ -130,7 +130,7 @@ Now that we've got an ng-model named "movieName" in the div that is controlled b
 
 'ng-click' is an angular event much like "onClick" in vanilla JS. Here it is telling our button to run the "getMovieName" function. Let's add that function in our JS. Update the controller to read as follows:
 
-```javascript
+```
 myApp.controller( 'LaunchpadControler', [ '$scope', function( $scope ){
   console.log( 'NG' );
   $scope.getMovieName = function(){
@@ -144,11 +144,7 @@ This will create the 'getMovieName' function within the scope of our controller.
 
 Refresh the page now and you'll see that the same functionality happens as before, but we also have that new button. Click it and you'll see that the script logs out our favorite movie. Not only is our ng-model of movieName two way bound on the DOM through input and expression, but it is also available to our controller in the js file! How cool is that?!?!?
 
-
-
 All of this is happening within our controller in the js and within the div in our html.
-
-![scope in html and js]
 
 food for thought
 ================
