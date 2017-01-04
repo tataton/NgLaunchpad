@@ -192,3 +192,5 @@ Next Steps:
 * could you extend this to create an array of objects instead of just strings?
 * how would you ng-repeat that info?
 * can you think of other ways we could use ng-repeat (buttons? divs? what else?)
+* wanna try showing/hiding something? look into ng-show and ng-hide
+* wondering if there's a way to do DOM manipulation with client side logic that is done in the HTML? check out ng-if
