@@ -181,7 +181,7 @@ Let's put 'em in an unordered list using ng-repeat:
 </ul>
 ```
 
-HWAAAAAAAAAT?!?!?!?! We didn't even write an new javascript?!?!!?
+HWAAAAAAAAAT?!?!?!?! We didn't even write any new javascript?!?!!?
 
 ![scopeArray html](images/07-DOM.png)
 
