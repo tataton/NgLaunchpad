@@ -14,6 +14,7 @@ Steps:
 * set up basic project HTML
 * our first 2-way bind
 * our first ng-click
+* our first ng-repeat
 * food for thought
 
 download AngularJS (1.5)
@@ -135,7 +136,7 @@ myApp.controller( 'LaunchpadControler', [ '$scope', function( $scope ){
   console.log( 'NG' );
   $scope.getMovieName = function(){
     console.log( 'in getMovieName()');
-    console.log( 'movieMame:', $scope.movieName );
+    console.log( 'movieName:', $scope.movieName );
   }; // end getMovieName
 }]);
 ```
@@ -146,10 +147,48 @@ Refresh the page now and you'll see that the same functionality happens as befor
 
 All of this is happening within our controller in the js and within the div in our html.
 
-food for thought
-================
-This is a simple example of how Angular works on the front end. Next steps:
+our first ng-repeat
+===================
+OK, let's do some DOM manipulation using ng-repeat. The syntax is completely different than JQuery, but it will use a 2-way bind to an array to repeat output on the DOM automatically. We'll first start by making an array in the js file:
+
+```
+$scope.favoriteMovies = [];
+```
+
+This will behave like any other array so we'll push movies into it on the button click:
+
+```  
+$scope.getMovieName = function(){
+  console.log( 'in getMovieName()');
+  console.log( 'movieName:', $scope.movieName );
+  $scope.favoriteMovies.push( $scope.movieName );
+  console.log( 'favoriteMovies:', $scope.favoriteMovies );
+}; // end getMovieName
+```
+
+Now let's make sure this works:
+![scopeArray html](images/06-scopeArray.png)
+
+OK. So we've got an array that can be 2-way bound to the DOM... so what?
+
+Let's put 'em in an unordered list using ng-repeat:
+
+```
+<ul>
+  <li ng-repeat='movie in favoriteMovies'>
+    {{ movie }}
+  </li>
+</ul>
+```
+
+HWAAAAAAAAAT?!?!?!?! We didn't even write an new javascript?!?!!?
+
+![scopeArray html](images/06-scopeArray.png)
+
+Next Steps:
+===========
 * recreate this!
-* add an array that holds all the favorite movies that have been input on button click
-* console log out that array
-* research ng-repeat and see if you can get that info on the DOM
+* can you apply it to a Node/Express project?
+* could you extend this to create an array of objects instead of just strings?
+* how would you ng-repeat that info?
+* can you think of other ways we could use ng-repeat (buttons? divs? what else?)
