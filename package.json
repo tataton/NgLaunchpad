@@ -1,0 +1,20 @@
+{
+  "name": "ng-launchpad",
+  "version": "1.0.0",
+  "description": "Tarkin rating system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tataton/NgLaunchpad.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tataton/NgLaunchpad/issues"
+  },
+  "homepage": "https://github.com/tataton/NgLaunchpad#readme"
+}
