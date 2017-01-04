@@ -183,7 +183,7 @@ Let's put 'em in an unordered list using ng-repeat:
 
 HWAAAAAAAAAT?!?!?!?! We didn't even write an new javascript?!?!!?
 
-![scopeArray html](images/06-scopeArray.png)
+![scopeArray html](images/07-DOM.png)
 
 Next Steps:
 ===========
